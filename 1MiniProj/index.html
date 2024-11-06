@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            display: block;
+            margin: 10px auto;
+            width: 200px;
+            height: 80px;
+            border: 20px double rebeccapurple;
+        }
+        div{
+            width: 30px;
+            height: 30px;
+            background-color: violet;
+            margin: 5px;
+            float: left;
+            color: white;
+            text-align: center;
+            line-height: 30px;
+            border: 2px solid violet;
+
+        }
+        .circle{
+            background-color: white;
+            border-radius: 50%;
+            color: black;
+            border: 2px solid violet;
+        }
+    </style>
+</head>
+<body>
+    <button>Create Element</button>
+    <script>
+        const btn = document.querySelector("button");
+        let number = 1;
+
+        const addElement = function(){
+            const div = document.createElement('div');
+            div.textContent = number;
+
+            if(number % 5 === 0){
+                div.classList.add("circle");
+            }
+
+            document.body.appendChild(div);
+            number++;
+
+        }
+
+        btn.addEventListener("click", addElement)
+
+    </script>
+</body>
+</html>
